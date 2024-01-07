@@ -1,0 +1,86 @@
+.wrapper {
+  @apply w-screen min-h-screen flex p-16 justify-start;
+}
+
+.wrapper > form {
+  @apply max-w-3xl p-5;
+  animation: slideIn 2s ease-in-out;
+}
+
+.wrapper > form > h1 {
+  @apply text-3xl mb-3 uppercase;
+}
+
+.wrapper > form > input {
+  @apply block py-2 px-5 mb-3 w-full border border-transparent bg-white/30 
+  placeholder:text-white outline-none;
+  transition: border-color 0.3s linear;
+}
+
+.wrapper > form > input:focus {
+  @apply border-purple-800/50 border-2;
+}
+
+.wrapper > form > button {
+  @apply text-lg font-medium uppercase py-1.5 px-4 border border-white inline-block mt-2 w-full
+  bg-transparent;
+  transition: box-shadow 0.4s linear, background-color 0.4s linear;
+}
+
+.wrapper > form > button:hover {
+  @apply shadow-md shadow-purple-300 bg-purple-500/40;
+}
+
+.success {
+  @apply text-white text-xl font-medium m-auto p-10 bg-slate-400/40 shadow-md shadow-purple-300;
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.error {
+  @apply text-red-600 text-lg;
+}
+
+@media (max-width: 1420px) {
+  .wrapper {
+    @apply justify-center items-center;
+  }
+  .wrapper > form {
+    @apply bg-slate-400/50 max-w-3xl flex-1;
+    animation: slideIn 2s ease-in-out;
+  }
+  .wrapper > form > h1 {
+    @apply text-xl mb-3 uppercase;
+  }
+}
+
+@media (max-width: 490.97px) {
+  .wrapper {
+    @apply p-8;
+  }
+  .wrapper > form > h1 {
+    @apply text-sm;
+  }
+  .wrapper > form > button {
+    @apply text-sm;
+  }
+}
